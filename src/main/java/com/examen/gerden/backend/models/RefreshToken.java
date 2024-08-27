@@ -5,25 +5,24 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.time.Instant;
+
 @Entity
 @Data
+@Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class Adresse {
+public class RefreshToken {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String numeroRue;
-    private String nomRue;
-    private String complementAdresse;
-    private String codePostal;
-    private String ville;
-    private String pays;
+    private String valeur;
+    private Instant creation;
 
-    public String getAdresseComplete() {
-        return numeroRue + " " + nomRue + " " + (complementAdresse != null ? complementAdresse + ", " : "") + ", " + ville + " " + codePostal + ", " + pays;
-    }
+    private Instant expiration;
+    private boolean estExpire;
 }

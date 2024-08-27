@@ -6,7 +6,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.util.Date;
+import java.time.LocalDateTime;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -20,14 +20,14 @@ public class Forum {
     private Long id;
 
     @OneToMany(mappedBy = "forum", cascade = CascadeType.ALL, orphanRemoval = true)
-    private Set<Commentaire> listeDeCommentaire = new HashSet<>();
+    private Set<Commentaire> listeDeCommentaires = new HashSet<>();
 
-    @Temporal(TemporalType.TIMESTAMP)
-    private Date dateDeCreation;
+
+    private LocalDateTime dateDeCreation;
 
     private String type;
 
-    @ManyToOne
+    @ManyToMany
     @JoinTable(
             name = "forum_utilisateur",
             joinColumns = @JoinColumn(name = "forum_id"),

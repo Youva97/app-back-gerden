@@ -17,10 +17,10 @@ public class ConversationPrivee {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @OneToMany(mappedBy = "conversationPrivee", cascade = CascadeType.ALL, orphanRemoval = true)
-    private Set<Message> listeMessage = new HashSet<>();
+    @OneToMany(mappedBy = "conversation", cascade = CascadeType.ALL, orphanRemoval = true)
+    private Set<Message> listeMessages = new HashSet<>();
 
-    @ManyToOne
+    @ManyToMany
     @JoinTable(
             name = "utilisateur_conversation",
             joinColumns = @JoinColumn(name = "conversation_id"),

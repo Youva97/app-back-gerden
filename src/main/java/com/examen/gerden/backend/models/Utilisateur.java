@@ -8,7 +8,6 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
-import javax.crypto.Mac;
 import java.util.*;
 
 @Entity
@@ -27,6 +26,8 @@ public class Utilisateur implements UserDetails {
 
     private String motDePasse;
 
+    private String fonction;
+
     private String telephone;
     private Boolean isActif = false;
 
@@ -37,10 +38,10 @@ public class Utilisateur implements UserDetails {
     @JoinColumn(name = "adresse_id", referencedColumnName = "id")
     private Adresse adresse;
 
-    @OneToMany(mappedBy = "emetteur_id", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(mappedBy = "emetteur", cascade = CascadeType.ALL, orphanRemoval = true)
     private Set<Message> messagesEnvoyees = new HashSet<>();
 
-    @OneToMany(mappedBy = "recepteur_id", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(mappedBy = "recepteur", cascade = CascadeType.ALL, orphanRemoval = true)
     private Set<Message> messageRecues = new HashSet<>();
 
     @ManyToMany(mappedBy = "utilisateurs")

@@ -1,0 +1,7 @@
+package com.examen.gerden.backend.exceptions;
+
+public class ResourceNotFoundException extends RuntimeException{
+    public ResourceNotFoundException(String message) {
+        super(message);
+    }
+}

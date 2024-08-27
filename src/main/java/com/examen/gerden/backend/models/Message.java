@@ -5,7 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.util.Date;
+import java.time.LocalDateTime;
 
 @Entity
 @Data
@@ -17,8 +17,8 @@ public class Message {
     private Long id;
     private String contenu;
 
-    @Temporal(TemporalType.TIMESTAMP)
-    private Date dateEnvoie;
+
+    private LocalDateTime dateEnvoie;
 
     private String urlPhoto;
 

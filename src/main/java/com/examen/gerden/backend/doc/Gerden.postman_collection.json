@@ -1,0 +1,219 @@
+{
+  "info": {
+    "_postman_id": "36ca563c-c3e2-42a5-9423-75c164bbd4ad",
+    "name": "Gerden API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "25844874"
+  },
+  "item": [
+    {
+      "name": "http://localhost:8200/utilisateurs/inscription",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"nom\": \"Toto\",\r\n  \"prenom\":\"tata\",\r\n  \"email\": \"tata@gmail.com\",\r\n  \"motDePasse\": \"password123\",\r\n  \"fonction\": \"MAINTENER\",\r\n  \"telephone\": \"1234567890\",\r\n  \"role\":{\r\n      \"libelle\":\"PARENT\"\r\n  },\r\n  \"adresse\":{\r\n      \"numeroRue\": \"230\",\r\n      \"nomRue\":\"Rue de bourg\",\r\n      \"complementAdresse\":\"Bâtiment D\",\r\n      \"ville\": \"Villeurbanne\",\r\n      \"codePostal\": \"69100\",\r\n      \"pays\": \"France\"\r\n  } \r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8200/utilisateurs/inscription",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8200",
+          "path": [
+            "utilisateurs",
+            "inscription"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "http://localhost:8200/utilisateurs/connexion",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"username\":\"tata@gmail.com\",\r\n    \"password\":\"12345\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8200/utilisateurs/connexion",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8200",
+          "path": [
+            "utilisateurs",
+            "connexion"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "http://localhost:8200/utilisateurs/tous",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiJ9.eyJleHAiOjE3MTgxOTY3NTcsIm5vbSI6IlRvdG8gdGF0YSIsInN1YiI6InRhdGFAZ21haWwuY29tIn0.B-thrjvl9i--bOJF7yDFUj0iO64zT6rEDaOFDwd3tsU",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8200/utilisateurs/tous",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8200",
+          "path": [
+            "utilisateurs",
+            "tous"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "http://localhost:8200/utilisateurs/refresh-token",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"refresh\": \"473ee467-bf35-45c6-b0fc-8c76b5b8cb89\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8200/utilisateurs/refresh-token",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8200",
+          "path": [
+            "utilisateurs",
+            "refresh-token"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "http://localhost:8200/utilisateurs/deconnexion",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiJ9.eyJleHAiOjE3MTgxOTY3NTcsIm5vbSI6IlRvdG8gdGF0YSIsInN1YiI6InRhdGFAZ21haWwuY29tIn0.B-thrjvl9i--bOJF7yDFUj0iO64zT6rEDaOFDwd3tsU",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:8200/utilisateurs/deconnexion",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8200",
+          "path": [
+            "utilisateurs",
+            "deconnexion"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "http://localhost:8200/utilisateurs/modifier-mot-de-passe",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"email\":\"tata@gmail.com\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8200/utilisateurs/modifier-mot-de-passe",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8200",
+          "path": [
+            "utilisateurs",
+            "modifier-mot-de-passe"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "http://localhost:8200/utilisateurs/nouveau-mot-de-passe",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"email\":\"tata@gmail.com\",\r\n    \"password\":\"12345\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8200/utilisateurs/nouveau-mot-de-passe",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8200",
+          "path": [
+            "utilisateurs",
+            "nouveau-mot-de-passe"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
