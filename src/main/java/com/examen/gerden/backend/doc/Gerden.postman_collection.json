@@ -7,7 +7,7 @@
   },
   "item": [
     {
-      "name": "http://localhost:8200/utilisateurs/inscription",
+      "name": "http://localhost:8083/utilisateurs/inscription",
       "request": {
         "method": "POST",
         "header": [],
@@ -21,12 +21,12 @@
           }
         },
         "url": {
-          "raw": "http://localhost:8200/utilisateurs/inscription",
+          "raw": "http://localhost:8083/utilisateurs/inscription",
           "protocol": "http",
           "host": [
             "localhost"
           ],
-          "port": "8200",
+          "port": "8083",
           "path": [
             "utilisateurs",
             "inscription"
@@ -36,7 +36,7 @@
       "response": []
     },
     {
-      "name": "http://localhost:8200/utilisateurs/connexion",
+      "name": "http://localhost:8083/utilisateurs/connexion",
       "request": {
         "method": "POST",
         "header": [],
@@ -50,12 +50,12 @@
           }
         },
         "url": {
-          "raw": "http://localhost:8200/utilisateurs/connexion",
+          "raw": "http://localhost:8083/utilisateurs/connexion",
           "protocol": "http",
           "host": [
             "localhost"
           ],
-          "port": "8200",
+          "port": "8083",
           "path": [
             "utilisateurs",
             "connexion"
@@ -65,7 +65,7 @@
       "response": []
     },
     {
-      "name": "http://localhost:8200/utilisateurs/tous",
+      "name": "http://localhost:8083/utilisateurs/tous",
       "request": {
         "auth": {
           "type": "bearer",
@@ -80,12 +80,12 @@
         "method": "GET",
         "header": [],
         "url": {
-          "raw": "http://localhost:8200/utilisateurs/tous",
+          "raw": "http://localhost:8083/utilisateurs/tous",
           "protocol": "http",
           "host": [
             "localhost"
           ],
-          "port": "8200",
+          "port": "8083",
           "path": [
             "utilisateurs",
             "tous"
@@ -95,7 +95,7 @@
       "response": []
     },
     {
-      "name": "http://localhost:8200/utilisateurs/refresh-token",
+      "name": "http://localhost:8083/utilisateurs/refresh-token",
       "request": {
         "method": "POST",
         "header": [],
@@ -109,12 +109,12 @@
           }
         },
         "url": {
-          "raw": "http://localhost:8200/utilisateurs/refresh-token",
+          "raw": "http://localhost:8083/utilisateurs/refresh-token",
           "protocol": "http",
           "host": [
             "localhost"
           ],
-          "port": "8200",
+          "port": "8083",
           "path": [
             "utilisateurs",
             "refresh-token"
@@ -124,7 +124,7 @@
       "response": []
     },
     {
-      "name": "http://localhost:8200/utilisateurs/deconnexion",
+      "name": "http://localhost:8083/utilisateurs/deconnexion",
       "request": {
         "auth": {
           "type": "bearer",
@@ -143,12 +143,12 @@
           "raw": ""
         },
         "url": {
-          "raw": "http://localhost:8200/utilisateurs/deconnexion",
+          "raw": "http://localhost:8083/utilisateurs/deconnexion",
           "protocol": "http",
           "host": [
             "localhost"
           ],
-          "port": "8200",
+          "port": "8083",
           "path": [
             "utilisateurs",
             "deconnexion"
@@ -158,7 +158,7 @@
       "response": []
     },
     {
-      "name": "http://localhost:8200/utilisateurs/modifier-mot-de-passe",
+      "name": "http://localhost:8083/utilisateurs/modifier-mot-de-passe",
       "request": {
         "method": "POST",
         "header": [],
@@ -172,12 +172,12 @@
           }
         },
         "url": {
-          "raw": "http://localhost:8200/utilisateurs/modifier-mot-de-passe",
+          "raw": "http://localhost:8083/utilisateurs/modifier-mot-de-passe",
           "protocol": "http",
           "host": [
             "localhost"
           ],
-          "port": "8200",
+          "port": "8083",
           "path": [
             "utilisateurs",
             "modifier-mot-de-passe"
@@ -187,7 +187,7 @@
       "response": []
     },
     {
-      "name": "http://localhost:8200/utilisateurs/nouveau-mot-de-passe",
+      "name": "http://localhost:8083/utilisateurs/nouveau-mot-de-passe",
       "request": {
         "method": "POST",
         "header": [],
@@ -201,12 +201,12 @@
           }
         },
         "url": {
-          "raw": "http://localhost:8200/utilisateurs/nouveau-mot-de-passe",
+          "raw": "http://localhost:8083/utilisateurs/nouveau-mot-de-passe",
           "protocol": "http",
           "host": [
             "localhost"
           ],
-          "port": "8200",
+          "port": "8083",
           "path": [
             "utilisateurs",
             "nouveau-mot-de-passe"

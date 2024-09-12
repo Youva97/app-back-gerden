@@ -3,6 +3,7 @@ package com.examen.gerden.backend.services;
 import com.examen.gerden.backend.models.ConversationPrivee;
 import com.examen.gerden.backend.models.Message;
 
+import java.util.Optional;
 import java.util.Set;
 
 public interface ConversationPriveeService {
@@ -11,6 +12,8 @@ public interface ConversationPriveeService {
     Message ajouterOuModifierMessage(Long conversationId, Long idEmetteur, Long idRecepteur, Message message);
 
     Set<Message> getMessagesDeLaConversation(Long conversationId);
+
+    Optional<ConversationPrivee> recupererConversation(Long conversationId);
 
     Set<ConversationPrivee> listerConversationsUtilisateur(Long utilisateurId);
 

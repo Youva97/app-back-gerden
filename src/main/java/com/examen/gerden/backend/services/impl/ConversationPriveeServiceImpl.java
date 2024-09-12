@@ -59,6 +59,10 @@ public class ConversationPriveeServiceImpl implements ConversationPriveeService 
         return messageRepository.save(message);
     }
 
+    @Override
+    public Optional<ConversationPrivee> recupererConversation(Long conversationId) {
+        return conversationPriveeRepository.findById(conversationId);
+    }
 
     @Override
     public Set<Message> getMessagesDeLaConversation(Long conversationId) {

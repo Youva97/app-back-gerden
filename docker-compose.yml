@@ -7,7 +7,7 @@ services:
       context: .
       dockerfile: Dockerfile
     ports:
-      - "8200:8082"
+      - "8200:8083"
     depends_on:
       - postgresdb
       - pgadmin

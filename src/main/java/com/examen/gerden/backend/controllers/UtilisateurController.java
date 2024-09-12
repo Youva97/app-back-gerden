@@ -5,6 +5,7 @@ import com.examen.gerden.backend.dtos.UtilisateurDTO;
 import com.examen.gerden.backend.mapper.UtilisateurMapper;
 import com.examen.gerden.backend.models.Role;
 import com.examen.gerden.backend.models.Utilisateur;
+import com.examen.gerden.backend.repositories.RoleRepository;
 import com.examen.gerden.backend.services.impl.AdresseServiceImpl;
 import com.examen.gerden.backend.services.impl.JwtServiceImpl;
 import com.examen.gerden.backend.services.impl.UtilisateurServiceImpl;
@@ -30,6 +31,7 @@ public class UtilisateurController {
     private final UtilisateurServiceImpl utilisateurService;
     private final AdresseServiceImpl adresseService;
     private AuthenticationManager authenticationManager;
+    private RoleRepository roleRepository;
 
     final JwtServiceImpl jwtServiceImpl;
     @Autowired
@@ -60,8 +62,18 @@ public class UtilisateurController {
     public ResponseEntity<Object> ajouterUtilisateur(@RequestBody @Valid UtilisateurDTO utilisateurDTO) {
         log.info("Inscription");
         Utilisateur nouveauUtilisateur=utilisateurMapper.toEntity(utilisateurDTO);
+
+        nouveauUtilisateur.setNom(utilisateurDTO.getNom());
+        nouveauUtilisateur.setPrenom(utilisateurDTO.getPrenom());
+        nouveauUtilisateur.setEmail(utilisateurDTO.getEmail());
+        nouveauUtilisateur.setMotDePasse(utilisateurDTO.getMotDePasse());
+        nouveauUtilisateur.setFonction(utilisateurDTO.getFonction());
+        nouveauUtilisateur.setTelephone(utilisateurDTO.getTelephone());
+        nouveauUtilisateur.setAdresse(utilisateurDTO.getAdresse());
+
+        nouveauUtilisateur.setIsActif(true);
         utilisateurService.enregistrerUtilisateur(nouveauUtilisateur);
-        return response(HttpStatus.CREATED, "Votre compte a été créer, veuillez consulter votre e-mail pour l'activé",null);
+        return response(HttpStatus.CREATED, "Votre compte a été créer avec succès",null);
     }
 
     @PostMapping("/connexion")

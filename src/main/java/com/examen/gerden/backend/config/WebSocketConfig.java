@@ -36,18 +36,18 @@ public class WebSocketConfig implements WebSocketMessageBrokerConfigurer {
     public void configureMessageBroker(MessageBrokerRegistry registry) {
         log.info("Début conf broker");
         // Configure un broker simple qui permet de gérer les destinations "/topic" et "/queue"
-        registry.enableSimpleBroker("/topic", "/queue");
+        registry.enableSimpleBroker("/topic");
         // Définit le préfixe pour les destinations d'application
         registry.setApplicationDestinationPrefixes("/ws/");
         // Définit l'utilisateur à qui on envoie un message
-        registry.setUserDestinationPrefix("/utilisateur");
+        // registry.setUserDestinationPrefix("/utilisateur");
         log.info("Fin conf broker");
     }
 
     @Override
     public void registerStompEndpoints(StompEndpointRegistry registry) {
         registry.addEndpoint("/chat-websocket").setAllowedOrigins("*");
-        registry.addEndpoint("/chat-websocket").setAllowedOrigins("*").withSockJS();
+        registry.addEndpoint("/chat-websocket").setAllowedOrigins("/http://localhost:4200").withSockJS();
     }
 
     @Override
